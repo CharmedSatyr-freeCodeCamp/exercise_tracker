@@ -1,0 +1,27 @@
+{
+  "name": "exercise_tracker",
+  "version": "0.0.1",
+  "description": "A freeCodeCamp APIs and Microservices Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charmedsatyr-freecodecamp/exercise_tracker.git"
+  },
+  "keywords": [],
+  "author": "CharmedSatyr <z@charmed.tech>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/charmedsatyr-freecodecamp/exercise_tracker/issues"
+  },
+  "homepage": "https://github.com/charmedsatyr-freecodecamp/exercise_tracker#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.0",
+    "shortid": "^2.2.14"
+  }
+}
