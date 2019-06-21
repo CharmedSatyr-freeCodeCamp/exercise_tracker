@@ -4,7 +4,8 @@
   "description": "A freeCodeCamp APIs and Microservices Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage",
+    "lint": "eslint '**/*.js'"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,12 @@
     "express": "^4.17.1",
     "mongoose": "^5.6.0",
     "shortid": "^2.2.14"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3",
+    "jest": "^24.8.0",
+    "supertest": "^4.0.2"
   }
 }

@@ -1,5 +1,3 @@
 /* Server */
 
-'use strict';
-
-const express = require('express');
+// Const express = require('express');
