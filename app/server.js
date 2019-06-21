@@ -1,7 +1,8 @@
-'use strict';
-
 require('dotenv').config();
+
 const express = require('express');
+
+
 const app = express();
 
 const { error } = require('./500');
@@ -18,3 +19,4 @@ const start = PORT =>
   });
 
 module.exports = { start };
+
