@@ -1,5 +1,11 @@
 {
     "extends": "airbnb-base",
+    "rules": {
+      "implicit-arrow-linebreak": 0,
+      "no-console": 0,
+      "no-unused-vars": ["error", { "argsIgnorePattern": "^err$|^req$|^res$|^next$" }],
+      "arrow-parens": 0
+    },
     "env": {
       "jest": true
     }
