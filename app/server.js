@@ -2,12 +2,11 @@ require('dotenv').config();
 
 const express = require('express');
 
-
 const app = express();
 
-const { error } = require('./500');
-const { missing } = require('./404');
-const { router } = require('./routes');
+const { error } = require('./middleware/500');
+const { missing } = require('./middleware/404');
+const { router } = require('./routes/routes');
 
 app.use(router);
 app.use('*', missing);
@@ -19,4 +18,3 @@ const start = PORT =>
   });
 
 module.exports = { start };
-
