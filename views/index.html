@@ -10,11 +10,81 @@
   </head>
 
   <body>
-   <h1>I am an exercise tracker...</h1>
+    <header>
+      <h1>Exercise Tracker</h1>
+    </header>
+
+    <main>
+      <form method='POST' action='/api/exercise/new-user'>
+        <h2>Create a new user</h2>
+        <p><code>POST /api/exercise/new-user</code></p>
+        <p>I can create a user by posting form data <code>username</code> to
+          <code>/api/exercise/new-user</code> and
+          returned will be an object with <code>username</code> and <code>_id</code>.</p>
+        <p><input type='text' name='username' placeholder='username' required /></p>
+        <p><input type='submit' value='Create user' /></p>
+      </form>
+
+      <form action='/api/exercise/add' method='POST'>
+        <h2>Add exercises</h2>
+        <p><code>POST /api/exercise/add</code></p>
+        <p>I can add an exercise to any user by posting form data <code>userId</code>
+          (<code>_id</code>), <code>description</code>,
+          <code>duration</code>, and optionally <code>date</code> to <code>/api/exercise/add</code>.
+          If no <code>date</code> is supplied, it will use
+          the current date. The <code>user</code> object with <code>exercise</code> fields added
+          should be
+          returned.</p>
+        <p><input type='text' name='userId' placeholder='User ID' required /></p>
+        <p><input type='text' name='description' placeholder='description' required /></p>
+        <p><input type='text' name='duration' placeholder='duration (mins.)' required /></p>
+        <p><input type='text' name='date' placeholder='date (yyyy-mm-dd)' /></p>
+        <p><input type='submit' value='Add exercise' /></p>
+      </form>
+
+      <form action='/api/exercise' method='GET'>
+        <h2>Get all exercises</h2>
+        <p><code>GET /api/exercise</code></p>
+        <p><input type='submit' value='Get exercises' /></p>
+      </form>
+
+      <form action='/api/exercise/users' method='GET'>
+        <h2>Get all users</h2>
+        <p><code>GET /api/exercise/users</code></p>
+        <p>I can get an array of all users by getting <code>api/exercise/users</code> with the
+          same
+          info as when
+          creating a user.</p>
+        <p><input type='submit' value='Get users' /></p>
+      </form>
+
+      <form action='/api/exercise/log' method='GET'>
+        <h2>Get one user's exercise logs</h2>
+        <p><code>GET /api/exercise/log?{userId}[&from][&to][&limit]</code></p>
+        <p>I can retrieve a full exercise log of any user by getting
+          <code>/api/exercise/log</code>
+          with a
+          parameter of <code>userId</code> (<code>_id</code>). The <code>user</code>
+          object with added <code>exercises</code> log and a <code>count</code> of all exercises
+          will be returned.</p>
+        <p>I can retrieve part of the <code>exercises</code> log of any user by also passing
+          along
+          optional parameters of <code>from</code>, <code>to</code>, and/or <code>limit</code>.
+          (Date format <code>yyyy-mm-dd</code>, limit = <code>int</code>)</p>
+        <p><strong>{ }</strong> = required, <strong>[ ]</strong> = optional</p>
+        <p><strong>from, to</strong> = dates (yyyy-mm-dd); <strong>limit</strong> = number</p>
+
+        <p><input type='text' name='userId' placeholder='user id' required /></p>
+        <p><input type='text' name='from' placeholder='from' /></p>
+        <p><input type='text' name='to' placeholder='to' /></p>
+        <p><input type='text' name='limit' placeholder='limit' /></p>
+        <p><input type='submit' value='Get logs' /></p>
+      </form>
+
+    </main>
+
+    <footer>Source code on <a href='https://github.com/charmedsatyr-freecodecamp/exercise_tracker'
+        target='_blank' rel='noopener noreferrer'>GitHub</a></footer>
   </body>
-
-
-
-
 
 </html>
