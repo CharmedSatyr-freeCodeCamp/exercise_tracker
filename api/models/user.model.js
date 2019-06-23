@@ -1,4 +1,4 @@
-const userSchema = require('./user.schema');
+const UserSchema = require('./user.schema');
 
 class UserModel {
   constructor(schema) {
@@ -15,8 +15,9 @@ class UserModel {
   }
 
   post(username) {
+    // eslint-disable-next-line
     return new this.schema({ username }).save();
   }
 }
 
-module.exports = new UserModel(userSchema);
+module.exports = new UserModel(UserSchema);

@@ -1,4 +1,4 @@
-const exerciseSchema = require('./exercise.schema');
+const ExerciseSchema = require('./exercise.schema');
 
 class ExerciseModel {
   constructor(schema) {
@@ -16,16 +16,11 @@ class ExerciseModel {
 
     if (!body.date) {
       body.date = Date.now();
-      console.log(body.date);
     }
 
-    try {
-      return new this.schema(body).save();
-      // .populate('users')
-    } catch (err) {
-      console.error(err);
-    }
+    // eslint-disable-next-line
+    return new this.schema(body).save();
   }
 }
 
-module.exports = new ExerciseModel(exerciseSchema);
+module.exports = new ExerciseModel(ExerciseSchema);
